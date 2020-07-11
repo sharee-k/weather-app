@@ -17,17 +17,22 @@
     <main class="weather-app-container">
         <div class="weather-search-area">
             <h2>Search for a City:</h2>
-            <input type="text" class="search-box"/>
-            <div class="weather-search-history"></div>
+            <div class="weather-search-box">
+                <input type="text" class="search-box"/>
+                <button id="search-button">Enter</button>
+            </div>
+            <div class="weather-search-history">Historical Searches</div> 
         </div>
         <div class="weather-display-area">
-            <div class="current-city">Current City</div>
-            <div class="current-city-temp">Temperature:<span class="temp">95</span><span>F</span></div>
-            <div class="current-city-humidity">Humidity:<span class="humidity">40%</span></div>
-            <div class="current-city-wind">Wind Speed:<span class="wind">10</span><span>MPH</span></div>
-            <div class="current-city-uv">UV Index:<span class="uv">5.0</span></div>
+            <div class="current-city-display">
+                <div class="current-city">Current City</div>
+                <div class="current-city-temp">Temperature:<span class="temp">95</span><span>F</span></div>
+                <div class="current-city-humidity">Humidity:<span class="humidity">40%</span></div>
+                <div class="current-city-wind">Wind Speed:<span class="wind">10</span><span>MPH</span></div>
+                <div class="current-city-uv">UV Index:<span class="uv">5.0</span></div>
+            </div>
             <div class="current-city-five-day">5-Day Forecast:
-                <div class=five-day>Five Days</div>
+                <div class="five-day">Five Days</div>
             </div>
         </div>
     </main>
