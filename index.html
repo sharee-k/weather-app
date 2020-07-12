@@ -17,24 +17,32 @@
     <main class="weather-app-container">
         <div class="weather-search-area">
             <h2>Search for a City:</h2>
-            <div class="weather-search-box">
-                <input type="text" class="search-box"/>
-                <button id="search-button">Enter</button>
+            <div class="weather-search-form">
+                <input type="text" class="search-input"/>
+                <button type="submit" id="search-button">Submit</button>
             </div>
-            <div class="weather-search-history">Historical Searches</div> 
+            <div class="weather-search-history"></div> 
         </div>
         <div class="weather-display-area">
             <div class="current-city-display">
-                <div class="current-city">Current City</div>
-                <div class="current-city-temp">Temperature:<span class="temp">95</span><span>F</span></div>
-                <div class="current-city-humidity">Humidity:<span class="humidity">40%</span></div>
-                <div class="current-city-wind">Wind Speed:<span class="wind">10</span><span>MPH</span></div>
-                <div class="current-city-uv">UV Index:<span class="uv">5.0</span></div>
+                <div class="city-display">
+                    <div class="current-city">City Name</div>
+                    <div class="current-date">Date</div>
+                    <div class="current-icon">Weather Icon</div>
+                </div>
+                <div class="current-city-temp">Temperature:<span class="temp"></span><span>F</span></div>
+                <div class="current-city-humidity">Humidity:<span class="humidity"></span><span>%</span></div>
+                <div class="current-city-wind">Wind Speed:<span class="wind"></span><span>MPH</span></div>
+                <div class="current-city-uv">UV Index:<span class="uv"></span></div>
             </div>
             <div class="current-city-five-day">5-Day Forecast:
-                <div class="five-day">Five Days</div>
+                <div class="five-day-date">Date</div>
+                <div class="five-day-temp">Temp<span>F</span></div>
+                <div class="five-day-humidity">Humidity<span>%</span></div>
             </div>
         </div>
     </main>
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 </body>
 </html>

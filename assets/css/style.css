@@ -25,22 +25,26 @@ body {
 .weather-search-area {
     display: flex;
     flex-direction: column;
+    text-align: center;
     padding: 20px;
     background-color: lightgray;
+    width: 40vw;
     height: 100vh;
 }
 
-.weather-search-box {
+.weather-search-form {
     padding-top: 20px;
 }
 
 .weather-search-history {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: left;
+    line-height: 2;
     margin-top: 20px;
     padding: 10px 5px;
     background-color: white;
+    border: 1px solid;
     height: 100vh;
 }
 
@@ -54,11 +58,20 @@ body {
     flex-direction: column;
     justify-content: center;
     padding-left: 20px;
-    margin-left: 15px;
     border: 1px solid;
     border-color: lightgray;
     width: 75vw;
-    height: 30vh;
+    height: 40vh;
+}
+
+.city-display {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+}
+
+.current-date, .current-icon {
+    padding-left: 20px;
 }
 
 .temp, .humidity, .wind, .uv {
@@ -66,6 +79,7 @@ body {
 }
 
 .current-city-five-day {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
-    margin-left: 15px;
 }
