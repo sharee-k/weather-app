@@ -31,14 +31,16 @@ function getCurrentWeather() {
         windEl.innerHTML = windValue;
     })
 
+    //Add current date
     var now = moment().format('MM-DD-YY');
     dateEl.innerHTML = now;
 
-    // var searchHistoryEl = document.querySelector(".weather-search-history");
+    //Save historical searches
+    var searchHistoryEl = document.querySelector(".weather-search-history");
 
-    // var historyEl = document.createElement("span");
-    // historyEl.textContent = searchInput;
-    // searchHistoryEl.appendChild(historyEl);
+    var historyEl = document.createElement("span");
+    historyEl.textContent = searchInput;
+    searchHistoryEl.appendChild(historyEl);
 };
 
 // var fiveDayDateEl = document.querySelector(".five-day-date")
