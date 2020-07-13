@@ -19,8 +19,9 @@ function getCurrentWeather() {
         return response.json();
     })
     .then(function(response) {
+        console.log(response);
         var cityValue = response.name;
-        var iconValue = response.weather.icon;
+        var iconValue = response.weather[0].icon;
         var tempValue = response.main.temp;
         var humidityValue = response.main.humidity;
         var windValue = response.wind.speed;
@@ -43,9 +44,26 @@ function getCurrentWeather() {
     searchHistoryEl.appendChild(historyEl);
 };
 
-var fiveDayDateEl = document.querySelector(".five-day-date")
-var fiveDayTempEl = document.querySelector(".five-day-temp")
-var fiveDayHumidityEl = document.querySelector(".five-day-humidity")
+//Five day forecast
+var fiveDayOneDateEl = document.querySelector(".five-day-date-one")
+var fiveDayOneTempEl = document.querySelector(".five-day-temp-one")
+var fiveDayOneHumidityEl = document.querySelector(".five-day-humidity-one")
+
+var fiveDayTwoDateEl = document.querySelector(".five-day-date-two")
+var fiveDayTwoTempEl = document.querySelector(".five-day-temp-two")
+var fiveDayTwoHumidityEl = document.querySelector(".five-day-humidity-two")
+
+var fiveDayThreeDateEl = document.querySelector(".five-day-date-three")
+var fiveDayThreeTempEl = document.querySelector(".five-day-temp-three")
+var fiveDayThreeHumidityEl = document.querySelector(".five-day-humidity-three")
+
+var fiveDayFourDateEl = document.querySelector(".five-day-date-four")
+var fiveDayFourTempEl = document.querySelector(".five-day-temp-four")
+var fiveDayFourHumidityEl = document.querySelector(".five-day-humidity-four")
+
+var fiveDayFiveDateEl = document.querySelector(".five-day-date-five")
+var fiveDayFiveTempEl = document.querySelector(".five-day-temp-five")
+var fiveDayFiveHumidityEl = document.querySelector(".five-day-humidity-five")
 
 function getFiveDay() {
     var searchInput = document.querySelector(".search-input").value;
@@ -56,14 +74,42 @@ function getFiveDay() {
         return response.json();
     })
     .then(function(response) {
-        var fiveDayDateValue = response.list[6];
-        var fiveDayTempValue = response.list[1].temp;
-        var fiveDayHumidityValue = response.list[1].humidity;
-        fiveDayDateEl.innerHTML = fiveDayDateValue;
-        fiveDayTempEl.innerHTML = fiveDayTempValue;
-        fiveDayHumidityEl.innerHTML = fiveDayHumidityValue;
-    });
+        console.log(response);
+        var fiveDayDateOneValue = response.list[3].dt_txt;
+        var fiveDayTempOneValue = response.list[3].main.temp;
+        var fiveDayHumidityOneValue = response.list[3].main.humidity;
+        fiveDayOneDateEl.innerHTML = fiveDayDateOneValue;
+        fiveDayOneTempEl.innerHTML = Math.floor(fiveDayTempOneValue);
+        fiveDayOneHumidityEl.innerHTML = fiveDayHumidityOneValue;
 
+        var fiveDayDateTwoValue = response.list[11].dt_txt;
+        var fiveDayTempTwoValue = response.list[11].main.temp;
+        var fiveDayHumidityTwoValue = response.list[11].main.humidity;
+        fiveDayTwoDateEl.innerHTML = fiveDayDateTwoValue;
+        fiveDayTwoTempEl.innerHTML = Math.floor(fiveDayTempTwoValue);
+        fiveDayTwoHumidityEl.innerHTML = fiveDayHumidityTwoValue;
+
+        var fiveDayDateThreeValue = response.list[19].dt_txt;
+        var fiveDayTempThreeValue = response.list[19].main.temp;
+        var fiveDayHumidityThreeValue = response.list[19].main.humidity;
+        fiveDayThreeDateEl.innerHTML = fiveDayDateThreeValue;
+        fiveDayThreeTempEl.innerHTML = Math.floor(fiveDayTempThreeValue);
+        fiveDayThreeHumidityEl.innerHTML = fiveDayHumidityThreeValue;
+
+        var fiveDayDateFourValue = response.list[27].dt_txt;
+        var fiveDayTempFourValue = response.list[27].main.temp;
+        var fiveDayHumidityFourValue = response.list[27].main.humidity;
+        fiveDayFourDateEl.innerHTML = fiveDayDateFourValue;
+        fiveDayFourTempEl.innerHTML = Math.floor(fiveDayTempFourValue);
+        fiveDayFourHumidityEl.innerHTML = fiveDayHumidityFourValue;
+
+        var fiveDayDateFiveValue = response.list[35].dt_txt;
+        var fiveDayTempFiveValue = response.list[35].main.temp;
+        var fiveDayHumidityFiveValue = response.list[35].main.humidity;
+        fiveDayFiveDateEl.innerHTML = fiveDayDateFiveValue;
+        fiveDayFiveTempEl.innerHTML = Math.floor(fiveDayTempFiveValue);
+        fiveDayFiveHumidityEl.innerHTML = fiveDayHumidityFiveValue;
+    });
 };
 
 searchButton.addEventListener("click", getCurrentWeather);
