@@ -9,7 +9,7 @@ var fiveDayEl = document.querySelector(".five-day");
 var searchButton = document.querySelector("#search-button");
 var searchCityEl = document.querySelector(".search-box");
 
-
+//Get weather for current city search
 function getCurrentWeather() {
     var searchInput = document.querySelector(".search-input").value;
     var api = 'http://api.openweathermap.org/data/2.5/weather?q=' + searchInput + '&units=imperial&appid=76db80d7cffbdb0aad58fd5a05192940';
