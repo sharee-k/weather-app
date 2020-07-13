@@ -36,6 +36,18 @@ body {
     padding-top: 20px;
 }
 
+.search-input {
+    padding: 2px;
+    border-radius: 3px;
+}
+
+#search-button {
+    padding: 2px;
+    border-radius: 3px;
+    background-color: rgb(56, 56, 209);
+    color: white;
+}
+
 .weather-search-history {
     display: flex;
     flex-direction: column;
@@ -68,6 +80,7 @@ body {
     display: flex;
     flex-direction: row;
     font-size: 30px;
+    font-weight: bold;
 }
 
 .current-date, .current-icon {
@@ -94,6 +107,18 @@ body {
 .five-day {
     border: 1px solid;
     border-radius: 10px;
-    background-color: mediumblue;
+    background-color: rgb(56, 56, 209);
+    color: white;
+    font-weight: bold;
     padding: 10px;
+    height: 30vh;
+    width: 12vw;
+}
+
+.five-day-temp-one, .five-day-temp-two, .five-day-temp-three, .five-day-temp-four, .five-day-temp-five {
+    padding-left: 5px;
+}
+
+.five-day-humidity-one, .five-day-humidity-two, .five-day-humidity-three, .five-day-humidity-four, .five-day-humidity-five {
+    padding-left: 5px;
 }
