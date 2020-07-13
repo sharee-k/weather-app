@@ -20,7 +20,7 @@ function getCurrentWeather() {
     })
     .then(function(response) {
         var cityValue = response.name;
-        var iconValue = response.weather;
+        var iconValue = response.weather.icon;
         var tempValue = response.main.temp;
         var humidityValue = response.main.humidity;
         var windValue = response.wind.speed;
@@ -43,24 +43,28 @@ function getCurrentWeather() {
     searchHistoryEl.appendChild(historyEl);
 };
 
-// var fiveDayDateEl = document.querySelector(".five-day-date")
-// var fiveDayTempEl = document.querySelector(".five-day-temp")
-// var fiveDayHumidityEl = document.querySelector(".five-day-humidity")
+var fiveDayDateEl = document.querySelector(".five-day-date")
+var fiveDayTempEl = document.querySelector(".five-day-temp")
+var fiveDayHumidityEl = document.querySelector(".five-day-humidity")
 
-// function getFiveDay() {
-//     var searchInput = document.querySelector(".search-input").value;
-//     var api = 'http://api.openweathermap.org/data/2.5/forecast?q=' + searchInput + '&units=imperial&appid=76db80d7cffbdb0aad58fd5a05192940';
-//     console.log(api);
-//     fetch(api)
-//     .then(function(response) {
-//         return response.json();
-//     })
-//     .then(function(response) {
-//         var fiveDayTempValue = response.list;
-//         fiveDayTempEl.innerHTML = fiveDayTempValue;
-//     });
+function getFiveDay() {
+    var searchInput = document.querySelector(".search-input").value;
+    var api = 'http://api.openweathermap.org/data/2.5/forecast?q=' + searchInput + '&units=imperial&appid=76db80d7cffbdb0aad58fd5a05192940';
+    console.log(api);
+    fetch(api)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(response) {
+        var fiveDayDateValue = response.list[6];
+        var fiveDayTempValue = response.list[1].temp;
+        var fiveDayHumidityValue = response.list[1].humidity;
+        fiveDayDateEl.innerHTML = fiveDayDateValue;
+        fiveDayTempEl.innerHTML = fiveDayTempValue;
+        fiveDayHumidityEl.innerHTML = fiveDayHumidityValue;
+    });
 
-// };
+};
 
 searchButton.addEventListener("click", getCurrentWeather);
 searchButton.addEventListener("click", getFiveDay);
