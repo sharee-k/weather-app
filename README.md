@@ -13,7 +13,7 @@ This project was built with HTML, CSS, and JavaScript.
 
 ## Screenshots
 Landing page
-![Website Screenshot 1](./assets/images/screenshot1.png)
+![Website Screenshot 1](./assets/images/screen-shot-1.png)
 
 ## Link
 https://sharee-k.github.io/weather-app/
