@@ -72,7 +72,7 @@ var fiveDayFiveHumidityEl = document.querySelector(".five-day-humidity-five")
 
 function getFiveDay() {
     var searchInput = document.querySelector(".search-input").value;
-    var api = 'http://api.openweathermap.org/data/2.5/forecast?q=' + searchInput + '&units=imperial&appid=76db80d7cffbdb0aad58fd5a05192940';
+    var api = 'https://api.openweathermap.org/data/2.5/forecast?q=' + searchInput + '&units=imperial&appid=76db80d7cffbdb0aad58fd5a05192940';
     console.log(api);
     fetch(api)
     .then(function(response) {
